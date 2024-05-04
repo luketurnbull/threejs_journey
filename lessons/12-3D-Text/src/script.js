@@ -1,14 +1,33 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import GUI from 'lil-gui'
 
 /**
  * Base
  */
+// Debug
+const gui = new GUI()
+
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
+
+/**
+ * Textures
+ */
+const textureLoader = new THREE.TextureLoader()
+
+/**
+ * Object
+ */
+const cube = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial()
+)
+
+scene.add(cube)
 
 /**
  * Sizes
